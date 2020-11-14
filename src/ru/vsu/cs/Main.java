@@ -41,43 +41,40 @@ public class Main {
     }
 
     private static int readNumberOfElements(char name) {
-    Scanner scan = new Scanner(System.in);
-    System.out.printf("Enter the value of %s : ", name);
-    return scan.nextInt();
+        Scanner scan = new Scanner(System.in);
+        System.out.printf("Enter the value of %s : ", name);
+        return scan.nextInt();
     }
 
     private static double calcSumOfSequence(double x, int n) {
         double element = 1;
         double sum = 1;
-        for(int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             element = element * (x / i);
             sum = sum + element;
         }
         return sum;
     }
 
-    private static Result calcSumAccuracyEps(double x, double eps)  {
+    private static Result calcSumAccuracyEps(double x, double eps) {
         double element = 1;
         double sum = 1;
         int iteration = 1;
-        while(Math.abs(element * (x - iteration) / iteration) >= eps |
+        while (Math.abs(element * (x - iteration) / iteration) >= eps |
                 Math.abs(element * (x - iteration) / iteration) == 0) {
-                element = element * (x / iteration);
-                sum = sum + element;
-                iteration++;
-            }
-        return new Result(sum,iteration);
+            element = element * (x / iteration);
+            sum = sum + element;
+            iteration++;
+        }
+        return new Result(sum, iteration);
     }
 
     private static void printResult(double result) {
         System.out.printf("Sum of sequence = %.2f  \n", result);
     }
 
-    private static void printResultEps(String firstMessage,Result sumMembersMoreEps, String secondMessage) {
+    private static void printResultEps(String firstMessage, Result sumMembersMoreEps, String secondMessage) {
         System.out.printf(firstMessage + sumMembersMoreEps.getSum() + "\n" + secondMessage +
-                sumMembersMoreEps.getIteration() +"\n");
+                sumMembersMoreEps.getIteration() + "\n");
     }
-
-
-
 }
