@@ -74,7 +74,7 @@ public class Main {
     }
 
     private static void printResultEps(String firstMessage, Result sumMembersMoreEps, String secondMessage) {
-        System.out.printf(firstMessage + sumMembersMoreEps.getSum() + "\n" + secondMessage +
+        System.out.print(firstMessage + sumMembersMoreEps.getSum() + "\n" + secondMessage +
                 sumMembersMoreEps.getIteration() + "\n");
     }
 }
