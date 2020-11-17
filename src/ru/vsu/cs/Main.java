@@ -17,12 +17,10 @@ public class Main {
         printResult(result);
 
         Result sumMembersMoreEps = calcSumAccuracyEps(x, eps);
-        printResultEps("Sum of sequence with accuracy e: ", sumMembersMoreEps,
-                "Step at which accuracy is achieved: ");
+        printResultEps(sumMembersMoreEps);
 
         Result sumMembersMoreEpsParted = calcSumAccuracyEps(x, eps / 10);
-        printResultEps("Sum of sequence with accuracy 0.1e: ", sumMembersMoreEpsParted,
-                "Step at which accuracy is achieved: ");
+        printResultEpsParted(sumMembersMoreEpsParted);
     }
 
     private static double readValue(char name) {
@@ -73,8 +71,14 @@ public class Main {
         System.out.printf("Sum of sequence = %.2f  \n", result);
     }
 
-    private static void printResultEps(String firstMessage, Result sumMembersMoreEps, String secondMessage) {
-        System.out.print(firstMessage + sumMembersMoreEps.getSum() + "\n" + secondMessage +
-                sumMembersMoreEps.getIteration() + "\n");
+    private static void printResultEps(Result sumMembersMoreEps) {
+        System.out.printf("Sum with accuracy eps: %.4f\n ", sumMembersMoreEps.getSum());
+        System.out.printf("The step at which the required accuracy is achieved: %s\n",
+                sumMembersMoreEps.getIteration());
+    }
+
+    private static void printResultEpsParted(Result sumMembersMoreEps) {
+        System.out.printf("Sum with accuracy eps/10: %.4f\n ", sumMembersMoreEps.getSum());
+        System.out.printf("The step at which the required accuracy is achieved: %s", sumMembersMoreEps.getIteration());
     }
 }
