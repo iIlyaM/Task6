@@ -58,8 +58,7 @@ public class Main {
         double element = 1;
         double sum = 1;
         int iteration = 1;
-        while (Math.abs(element * (x - iteration) / iteration) >= eps |
-                Math.abs(element * (x - iteration) / iteration) == 0) {
+        while (Math.abs(element * x / iteration) >= eps) {
             element = element * (x / iteration);
             sum = sum + element;
             iteration++;
