@@ -12,8 +12,8 @@ public class Main {
         int n = readNumberOfElements('n');
         double eps = readValue('e');
         checkValue(eps);
-        double result = calcSumOfSequence(x, n);
-        printResult(result);
+
+        printResult(calcSumOfSequence(x, n));
         printResultEps(calcSumAccuracyEps(x, eps), eps);
         printResultEps(calcSumAccuracyEps(x, eps / 10), eps / 10);
     }
@@ -22,7 +22,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.printf("Enter the value %s : ", name);
         return scan.nextDouble();
-
     }
 
     private static double checkValue(double eps) {
