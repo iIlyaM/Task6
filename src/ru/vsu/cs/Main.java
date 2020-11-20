@@ -11,7 +11,7 @@ public class Main {
         double x = readValue('x');
         int n = readNumberOfElements('n');
         double eps = readValue('e');
-        checkValue(eps);
+        eps = checkValue(eps);
 
         printResult(calcSumOfSequence(x, n));
         printResultEps(calcSumAccuracyEps(x, eps), eps);
