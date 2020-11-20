@@ -15,7 +15,6 @@ public class Main {
         double result = calcSumOfSequence(x, n);
         printResult(result);
         printResultEps(calcSumAccuracyEps(x, eps), eps);
-
         printResultEps(calcSumAccuracyEps(x, eps / 10), eps / 10);
     }
 
