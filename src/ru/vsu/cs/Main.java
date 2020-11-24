@@ -38,11 +38,15 @@ public class Main {
         return scan.nextInt();
     }
 
+    private static double calcElement(double x, double element, int i) {
+        return element * (x / i);
+    }
+
     private static double calcSumOfSequence(double x, int n) {
         double element = 1;
         double sum = 1;
         for (int i = 1; i <= n; i++) {
-            element = element * (x / i);
+            element = calcElement(x, element, i);
             sum = sum + element;
         }
         return sum;
@@ -52,8 +56,8 @@ public class Main {
         double element = 1;
         double sum = 1;
         int iteration = 1;
-        while (Math.abs(element * x / iteration) >= eps) {
-            element = element * (x / iteration);
+        while (Math.abs(calcElement(x, element, iteration)) >= eps) {
+            element = calcElement(x, element, iteration);
             sum = sum + element;
             iteration++;
         }
